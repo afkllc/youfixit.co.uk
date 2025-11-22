@@ -1,36 +1,7 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Base from '../layouts/Base.astro';
+const pageTitle = "Home";
 ---
-
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h3>Welcome!</h3>
-			<p>
-				YouFixIt is a school project - a site that shares repair guides, similar to iFixIt!
-			</p>
-			<p>
-				This project is open source, and all the guides are created in markdown!
-			</p>
-			<p>Here are a the instructions on how to get started creating a guide:</p>
-			<ul>
-				<li>Fork the site on <a href="https://github.com/iLikeToCode/youfixit.co.uk/fork">GitHub</a></li>
-				<li>Take a look at the <a href="https://github.com/iLikeToCode/youfixit.co.uk/blob/main/src/templates">templates</a></li>
-				<li>Inside your fork, create your own guide in <code>src/content/guides/**/*.md</code></li>
-				<li>If you aren't familiar with markdown, take a look at the <a href="https://www.markdownguide.org/cheat-sheet/">cheat sheet</a></li>
-				<li>Fill out the title, author, and date of writing at the top of the file</li>
-				<li>Make sure you have all the resources available for your repair guide</li>
-				<li>Make sure to include some pictures and clear instructions in your guide</li>
-			</ul>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Base pageTitle={pageTitle} current="home">
+  <p>About page content...</p>
+</Base>
