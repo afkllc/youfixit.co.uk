@@ -9,6 +9,8 @@ const guides = defineCollection({
 		z.object({
 			title: z.string(),
 			description: z.string(),
+			// Optional hero image for the guide (stored via Astro `image` schema helper)
+			heroImage: image().optional(),
 			// Transform string to Date object
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional()
