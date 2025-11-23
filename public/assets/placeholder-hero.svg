@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+  <defs>
+    <linearGradient id="dg" x1="0" x2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#060814"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="360" fill="url(#dg)" rx="12"/>
+  <g fill="#dbeafe" font-family="Inter, Roboto, Arial, sans-serif">
+    <text x="60" y="120" font-size="36" font-weight="700">Guide: Upgrade or Replace RAM</text>
+    <text x="60" y="170" font-size="18" opacity="0.9">Step-by-step walkthrough • Placeholder hero image</text>
+  </g>
+</svg>

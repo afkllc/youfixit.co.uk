@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480">
+  <rect width="100%" height="100%" fill="#fff7ed"/>
+  <g fill="#92400e" font-family="Inter, Roboto, Arial, sans-serif">
+    <text x="40" y="80" font-size="24" font-weight="700">Step 2</text>
+    <text x="40" y="120" font-size="16">Choose compatible RAM: match DDR generation and form factor</text>
+  </g>
+</svg>

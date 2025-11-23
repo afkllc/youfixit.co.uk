@@ -1,83 +1,83 @@
 ---
-import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import Header from '../components/Header.astro';
 
-type Props = CollectionEntry<'guides'>['data'];
-
-const { title, description, pubDate, updatedDate, heroImage} = Astro.props;
+const { title = 'Untitled guide', description = '', pubDate, updatedDate, heroImage = null, tools = [], parts = [] } = Astro.props ?? {};
+const pubDateObj = pubDate ? new Date(pubDate) : undefined;
+const updatedDateObj = updatedDate ? new Date(updatedDate) : undefined;
 ---
-
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+  <head>
+    <BaseHead title={title} description={description} />
+    <style>
+	@font-face {
+    font-family: 'Milker';
+    src: url('/fonts/MilkerRegular.woff') format('woff2'),
+        url('/fonts/MilkerRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+      body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#cecece }
+      .hero{ width:100%; background:#f6f7f8; display:block; }
+      .hero img{ width:100%; height:auto; display:block; object-fit:cover; }
+      main{ max-width:1100px; margin:1.5rem auto; padding:0 1rem; padding-left:10%; width:100%;}
+      .meta{ margin:0 0 1rem 0; }
+	  
+      h1{ margin:.25rem 0; font-size:3.6rem; font-family:'Milker'}
+      .badges{ display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.5rem; font-size:.85rem; color:#55606a }
+      .content{ width:100%; }
+      .tools, .parts{ margin-top:1rem; font-size:.95rem; color:#334155 }
+      @media (max-width:800px){ main{ padding:0 .75rem } }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <!-- <div class="hero">
+      {heroImage ? <img src={heroImage} alt={'Hero image for ' + title} /> : null}
+    </div> -->
+    <main>
+      <header class="meta">
+        <h1>{title}</h1>
+        <div style="color:#475569">{description}</div>
+        <div class="badges">
+          {pubDateObj ? <span>Published: <FormattedDate date={pubDateObj} /></span> : null}
+          {updatedDateObj ? <span>Updated: <FormattedDate date={updatedDateObj} /></span> : null}
+        </div>
+      </header>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
-					<slot />
-				</div>
-			</article>
-		</main>
-		<Footer />
-	</body>
-</html>
+      <article class="content">
+        <slot />
+      </article>
+
+      <section style="margin-top:2rem">
+        <div class="tools"><strong>Tools:</strong> {tools && tools.length ? tools.join(', ') : '—'}</div>
+        <div class="parts"><strong>Parts:</strong> {parts && parts.length ? parts.join(', ') : '—'}</div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+      <style>
+      :root{ --max-width:1100px; }
+      body{ font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:0; color: #cecece; background: #0b1220; }
+      main{ max-width:var(--max-width); margin:2rem auto; padding:0 1rem; }
+      .hero{ display:block; margin-bottom:1.25rem; }
+      .hero img{ width:100%; max-height:420px; object-fit:cover; border-radius:10px; box-shadow:0 10px 30px rgba(2,6,23,0.6); display:block }
+      .top-tools{ display:flex; gap:.5rem; flex-wrap:wrap; margin:1rem 0; align-items:center }
+      .tool-badge{ background:linear-gradient(90deg,#0f172a 0%,#071022 100%); color:#dbeafe; padding:.4rem .7rem; border-radius:999px; border:1px solid rgba(255,255,255,0.04); font-size:.95rem }
+      .grid{ display:grid; grid-template-columns: 1fr 320px; gap:1.25rem; align-items:start; }
+      .card{ padding:1rem; background: linear-gradient(180deg,#071021 0%, #06101a 100%); border-radius:10px; box-shadow:0 6px 24px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03); }
+      .tools-list, .parts-list{ padding:0; margin:0; list-style:none; }
+      .card :where(h2,h3){ color:#dbeafe; }
+      .card p{ color:#c9d7f5; line-height:1.6 }
+      .steps{ counter-reset:step; margin:0; padding:0; }
+      .step{ counter-increment:step; display:grid; grid-template-columns: 180px 1fr; gap:1rem; margin:1.25rem 0; align-items:start }
+      .step-number{ width:52px; height:52px; border-radius:50%; background:linear-gradient(180deg,#06b6d4,#0ea5a3); color:#02111a; font-weight:700; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(2,6,23,0.6) }
+      .step figure{ margin:0 }
+      .step img{ width:180px; height:120px; object-fit:cover; border-radius:8px; }
+      .note{ background:rgba(255,255,255,0.02); padding:.6rem; border-left:3px solid rgba(99,102,241,0.12); border-radius:6px; color:#bcd3ff }
+
+      @media (max-width:980px){ .grid{ grid-template-columns:1fr; } .step{ grid-template-columns:1fr; } .step img{ width:100%; height:auto } }
+    </style>

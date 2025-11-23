@@ -1,207 +1,80 @@
 ---
-title: 'Upgrade or Replace RAM'
-description: 'A guide on how to upgrade or replace the ram in your computer.'
-pubDate: 'Nov 17 2025'
+title: "Upgrade or Replace RAM"
+description: "Step-by-step instructions for upgrading or replacing RAM."
+pubDate: "2025-11-17"
+heroImage: "/assets/placeholder-hero.svg"
+tools:
+  - "Phillips screwdriver (small)"
+  - "Anti-static wrist strap (recommended)"
+parts:
+  - "Compatible RAM modules"
+updatedDate: "2025-11-18"
+---
+## Quick overview
+
+This guide has been simplified for clarity — follow the steps below and replace images in `/public/assets/` with your own photos where appropriate.
+
+- **Estimated time:** 15–45 minutes
+- **Difficulty:** Easy–Moderate
+
+> The `Tools` list shown at the top is pulled from the guide's frontmatter.
+
 ---
 
-## Headings
+## Tools Needed (also shown at top)
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+- Phillips screwdriver (small)
+- Anti-static wrist strap (recommended)
+- Plastic spudger (optional)
 
-# H1
+---
 
-## H2
+## Step-by-step
 
-### H3
+The steps below are concise and actionable. Replace the placeholder images in `/public/assets/` with real photos for your device.
 
-#### H4
+### Step 1 — Identify your hardware
 
-##### H5
+<figure>
+  <img src="/assets/placeholder-step-1.svg" alt="Identify hardware">
+  <figcaption>Check existing modules and slots — note DDR generation.</figcaption>
+</figure>
 
-###### H6
+- Power down and unplug the device.
+- Open the case or remove the laptop back panel.
+- Look at existing RAM modules for labels (DDR4, DDR5, capacity, speed).
 
-## Paragraph
+### Step 2 — Choose compatible RAM
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+<figure>
+  <img src="/assets/placeholder-step-2.svg" alt="Choose compatible RAM">
+  <figcaption>Choose modules that match motherboard specs and channel configuration.</figcaption>
+</figure>
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+- Check the motherboard's manual or manufacturer pages for supported RAM types and recommended slot population.
+- For best performance, buy matching kits for dual-channel configurations.
 
-## Images
+### Step 3 — Install the new modules
 
-### Syntax
+<figure>
+  <img src="/assets/placeholder-step-3.svg" alt="Install modules">
+  <figcaption>Seat the modules straight down until clips click.</figcaption>
+</figure>
 
-```markdown
-![Alt text](./full/or/relative/path/of/image)
-```
+- Release the side clips and remove old modules if replacing.
+- Align the notch on the module with the slot and press firmly until the clips engage.
 
-## Blockquotes
+### Step 4 — Boot and verify
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+- Power on and check BIOS/UEFI for correct capacity and speed.
+- In your OS, verify system memory and run a memory test if you suspect instability.
 
-### Blockquote without attribution
+---
 
-#### Syntax
+## Customisation notes
 
-```markdown
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-```
+- Replace `/assets/placeholder-*.svg` with real photos under `public/assets/`.
+- Add more steps or split desktop/laptop sections if you need device-specific instructions.
 
-#### Output
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
 
-### Blockquote with attribution
-
-#### Syntax
-
-```markdown
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-```
-
-#### Output
-
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
-
-## Tables
-
-### Syntax
-
-```markdown
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-```
-
-### Output
-
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-
-## Code Blocks
-
-### Syntax
-
-we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
-
-````markdown
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
-```
-````
-
-### Output
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
-```
-
-## List Types
-
-### Ordered List
-
-#### Syntax
-
-```markdown
-1. First item
-2. Second item
-3. Third item
-```
-
-#### Output
-
-1. First item
-2. Second item
-3. Third item
-
-### Unordered List
-
-#### Syntax
-
-```markdown
-- List item
-- Another item
-- And another item
-```
-
-#### Output
-
-- List item
-- Another item
-- And another item
-
-### Nested list
-
-#### Syntax
-
-```markdown
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-```
-
-#### Output
-
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-
-## Other Elements — abbr, sub, sup, kbd, mark
-
-### Syntax
-
-```markdown
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-```
-
-### Output
-
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.

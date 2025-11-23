@@ -3,8 +3,8 @@
 	--accent: #E1D0B3;
 	--accent-dark: #303030;
 	--black: 15, 18, 25;
-	--gray: rgb(53, 47, 38);
-	--gray-light: 255, 225, 175;
+	--gray: rgb(53, 47, 38) ;
+	--gray-light: 0, 0, 0;
 	--gray-dark: rgb(139, 139, 139);
 	--gray-gradient: rgba(var(--gray-light), 50%), #5c5c5c;
 	--box-shadow:
