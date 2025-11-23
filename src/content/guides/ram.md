@@ -69,12 +69,3 @@ The steps below are concise and actionable. Replace the placeholder images in `/
 - Power on and check BIOS/UEFI for correct capacity and speed.
 - In your OS, verify system memory and run a memory test if you suspect instability.
 
----
-
-## Customisation notes
-
-- Replace `/assets/placeholder-*.svg` with real photos under `public/assets/`.
-- Add more steps or split desktop/laptop sections if you need device-specific instructions.
-
-
-
